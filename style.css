@@ -1,62 +1,115 @@
 *,
 *::before,
 *::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 :root {
-    /* Primary */
-    --color-light-red: hsl(0, 100%, 67%);
-    --color-orangey-yellow: hsl(39, 100%, 56%);
-    --color-green-teal: hsl(166, 100%, 37%);
-    --color-cobalt-blue: hsl(234, 85%, 45%);
+  /* Primary */
+  --color-light-red: hsl(0, 100%, 67%);
+  --color-orangey-yellow: hsl(39, 100%, 56%);
+  --color-green-teal: hsl(166, 100%, 37%);
+  --color-cobalt-blue: hsl(234, 85%, 45%);
 
-    /* Gradients */
-    /* background */
-    --color-light-slate-blue: hsl(252, 100%, 67%);
-    --color-light-royal-blue: hsl(241, 81%, 54%);
+  /* Gradients */
+  /* background */
+  --color-light-slate-blue: hsl(252, 100%, 67%);
+  --color-light-royal-blue: hsl(241, 81%, 54%);
 
-    /* circle */
-    --color-violet-blue: hsla(256, 72%, 46%, 1);
-    --color-persian-blue: hsla(241, 72%, 46%, 0);
+  /* circle */
+  --color-violet-blue: hsla(256, 72%, 46%, 1);
+  --color-persian-blue: hsla(241, 72%, 46%, 0);
 
-    /* Neutral */
-    --color-white: hsl(0, 0%, 100%);
-    --color-pale-blue: hsl(221, 100%, 96%);
-    --color-light-lavender: hsl(241, 100%, 89%);
-    --color-dark-gray-blue: hsl(224, 30%, 27%);
+  /* Neutral */
+  --color-white: hsl(0, 0%, 100%);
+  --color-pale-blue: hsl(221, 100%, 96%);
+  --color-light-lavender: hsl(241, 100%, 89%);
+  --color-light-blue-fig: var(--color-light-lavender);
+  --color-dark-gray-blue: hsl(224, 30%, 27%);
 
-    /* Fonts */
-    /* font family */
-    --ff-primary: "Hanken Grotesk", serif;
+  /* Fonts */
+  /* font family */
+  --ff-primary: "Hanken Grotesk", serif;
 
-    /* font weights */
-    --fw-medium: 500;
-    --fw-bold: 700;
-    --fw-extra-bold: 800;
+  /* font weights */
+  --fw-medium: 500;
+  --fw-bold: 700;
+  --fw-extra-bold: 800;
 }
 
 body {
-    font-family: var(--ff-primary);
-    font-weight: var(--fw-medium);
+  font-family: var(--ff-primary);
+  font-weight: var(--fw-medium);
 }
 
 .gradient-background {
-    background: linear-gradient(var(--color-light-slate-blue), var(--color-light-royal-blue));
+  background: linear-gradient(
+    to bottom,
+    var(--color-light-slate-blue),
+    var(--color-light-royal-blue)
+  );
 }
 
 .gradient-circle {
-    background: linear-gradient(var(--color-violet-blue), var(--color-persian-blue));
+  background: linear-gradient(
+    var(--color-violet-blue),
+    var(--color-persian-blue)
+  );
 }
 
+.container {
+  margin-inline: auto;
+  width: 375px;
+}
+
+.section > header {
+  font-size: calc((18 / 16) * 1rem);
+}
+
+#result {
+  color: var(--color-light-blue-fig);
+  text-align: center;
+  padding-bottom: calc((40 / 16) * 1em);
+  border-radius: 0 0 calc((32 / 16) * 1em) calc((32 / 16) * 1em);
+
+  > header {
+    padding-block: calc((24 / 16) * 1em);
+  }
+
+  article {
+    margin-inline: auto;
+    width: calc((140 / 16) * 1em);
+    height: calc((140 / 16) * 1em);
+    aspect-ratio: 1/1;
+    padding: 1em;
+    border-radius: 100%;
+
+    > header {
+      font-size: calc((56 / 16) * 1rem);
+      font-weight: var(--fw-extra-bold);
+      color: var(--color-white);
+    }
+  }
+
+  summary {
+    header {
+      font-size: calc((24 / 16) * 1rem);
+      color: var(--color-white);
+    }
+
+    p {
+      text-wrap: balance;
+    }
+  }
+}
 
 .attribution {
-    font-size: 11px;
-    text-align: center;
+  font-size: 11px;
+  text-align: center;
 
-    a {
-        color: hsl(228, 45%, 44%);
-    }
+  a {
+    color: hsl(228, 45%, 44%);
+  }
 }
